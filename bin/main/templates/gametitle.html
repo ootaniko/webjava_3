@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>SIROUTO RPG</title>
+</head>
+<body>
+	<h3>
+		SIROUTO RPG
+	</h3>
+
+		<form action="#" th:action="@{/gametitle}" th:object="${jobForm}" method="post">
+		<div>
+			モード選択：
+				<input type="radio" th:value="True" th:id="new0" name="new" th:field="*{goNext}">
+				<label th:for="job0">New Game</label>
+				<input type="radio" th:value="False" th:id="new1" name="new" th:field="*{goNext}">
+				<label th:for="job1">Continue</label>
+		</div>
+        <button type="submit" class="btn btn-default">Game Start</button>
+	</form>
+
+</body>
+</html>

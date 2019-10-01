@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>SIROUTO RPG</title>
+</head>
+<body>
+	<h3>
+		キャラクター作成
+	</h3>
+	<form action="#" th:action="@{/charactermake}" th:object="${jobForm}" method="post">
+		<div>
+			職業：
+				<input type="radio" th:value="0" th:id="job0" name="job" th:field="*{jobId}">
+				<label th:for="job0">戦士</label>
+				<input type="radio" th:value="1" th:id="job1" name="job" th:field="*{jobId}">
+				<label th:for="job1">魔法使い</label>
+				<input type="radio" th:value="2" th:id="job2" name="job" th:field="*{jobId}">
+				<label th:for="job2">武闘家</label>
+		</div>
+		<div>
+			名前：
+			<input type="text" id="characterName" name="characterName" value="ああああ" th:field="*{name}">
+		</div>
+
+		<div th:if="${characternum < 3}">
+			次のキャラクターを作成しますか？：
+				<input type="radio" th:value="True" th:id="job0" name="next" th:field="*{goNext}">
+				<label th:for="job0">はい</label>
+				<input type="radio" th:value="False" th:id="job1" name="next" th:field="*{goNext}">
+				<label th:for="job1">いいえ</label>
+		</div>
+        <button type="submit" class="btn btn-default">次へ</button>
+	</form>
+</body>
+</html>
